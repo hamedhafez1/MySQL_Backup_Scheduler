@@ -1,0 +1,5 @@
+@echo off
+
+REM sc.exe create [G9TM][MySqlBackup] binpath= "<pathtobinaryexecutable>"
+
+echo sc.exe create [G9TM][MySqlBackup] binpath= "%CD%\G9MySqlBackup.exe"

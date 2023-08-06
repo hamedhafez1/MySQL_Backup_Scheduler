@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-G9MySqlBackup-6f6677c3-163f-4818-b1f2-b518fc85889d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CreateWindowsService.bat" />
+    <None Remove="DeleteWindowsService.bat" />
+    <None Remove="Resources\7z\7za.dll" />
+    <None Remove="Resources\7z\7za.exe" />
+    <None Remove="Resources\7z\7zxa.dll" />
+    <None Remove="Resources\mysqldump.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DeleteWindowsService.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CreateWindowsService.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\7z\7za.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7z\7za.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7z\7zxa.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mysqldump.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="G9ConfigManagement" Version="3.0.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.1" />
+  </ItemGroup>
+</Project>
